@@ -1,0 +1,21 @@
+.classContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.Itemcards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 60vw;
+}
+
+.classContainer h1{
+    background-color: blue;
+    width: 60vw;
+}

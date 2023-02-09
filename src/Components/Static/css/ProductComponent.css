@@ -5,14 +5,17 @@
 
 .container{
     display: flex;
+    justify-content: space-between;
 }
+
+/* Left Side */
 
 .left{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    height: 100vh;
 }
 
 .sizes{
@@ -29,9 +32,11 @@
     display: inline-block;
     height: 1rem;
     width: 1.5rem;
+    margin: 3px;
 }
 
 .dataSheet{
+    background-color: rgb(221, 225, 229);
     display: flex;
     flex-direction: column;
     height: 8rem;
@@ -45,4 +50,54 @@
 
 .quantity{
     margin-top: 4rem;
+}
+
+
+/* Right Side */
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    right: 5rem;
+}
+
+.right h1{
+    background-color: blue;
+    width: 100vh;
+
+}
+
+.right h3{
+    font-weight: 1000;
+    font-size: large;
+}
+
+.right h3 span{
+    background-color: black;
+    display: inline-block;
+    margin-left: 4px;
+    height: 1rem;
+    width: 1rem;
+}
+
+.right h2{
+    width: 100vh;
+}
+
+.table1{
+    width: 100vh;
+    padding: 4rem 0;
+}RecomendedItemCard
+
+.table{
+    width: 100vh;
+    padding: 4rem 0;
+}
+
+.cartBtn{
+    width: 50vh;
 }

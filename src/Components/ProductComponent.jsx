@@ -50,7 +50,7 @@ function ProductComponent() {
 
         <div className="right">
           <h1>V1020-204</h1>
-          <h3>Color: <span>Black</span> <span></span></h3>
+          <h3>Color: Black<span></span></h3>
           <h2>AS568-204 O-rings made from CP80BK21; a 80 Shore A durometer Canrez FKM GFLT. This material is Black, Clean Room Manufactured, USP VI, KTW, WRAS, Encapsulated, High Temp, and Silicone Lubricated.</h2>
 
         <div className="table1">
@@ -108,12 +108,13 @@ function ProductComponent() {
     </TableContainer>
           </div>
 
-          <Button
+          <Button className='cartBtn'
   onClick={() => {
     alert('clicked');
   }}
+  variant="contained"
 >
-  Click me
+  Add to Cart
 </Button>
         </div>
     </div>
