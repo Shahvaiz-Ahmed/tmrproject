@@ -1,0 +1,53 @@
+.desccontainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desccontainer h1{
+    margin-bottom: 10rem;
+    background-color: blue;
+    position: relative;
+    left: 5vw;
+    margin-right: 22vw;
+}
+
+.containerBody{
+    display: flex;
+}
+
+.descleft{
+    flex: 1;
+}
+
+.descleft h3{
+    width: 35vw;
+    margin-left: 8rem;
+}
+
+.detailTable{
+    width: 35vw;
+    margin-left: 8rem;
+}
+
+.descright{
+    flex: 1;
+}
+
+.descdataSheet{
+    background-color: rgb(221, 225, 229);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 8rem;
+    width: 10rem;
+    margin-left: 35rem;
+    margin-bottom: 4rem;
+}
+
+.descdataSheet img{
+    height: 6rem;
+    width: 6rem;
+    padding: 1rem;
+}

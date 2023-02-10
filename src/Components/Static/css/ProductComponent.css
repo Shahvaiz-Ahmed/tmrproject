@@ -16,6 +16,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
+    left: 6rem;
 }
 
 .sizes{
@@ -91,7 +93,7 @@
 .table1{
     width: 100vh;
     padding: 4rem 0;
-}RecomendedItemCard
+}
 
 .table{
     width: 100vh;
