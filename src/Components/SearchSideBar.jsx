@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Static/css/SearchSideBar.css';
 import product from './Static/images/product.png';
 import Button from '@mui/material/Button';
@@ -7,29 +7,24 @@ import Button from '@mui/material/Button';
 function SearchSideBar() {
     const [csLower, setcsLower] = useState();
     const [csUpper, setcsUpper] = useState();
-    const [idLower, setisLower] = useState();
+    const [idLower, setidLower] = useState();
     const [idUpper, setidUpper] = useState();
-    
-
-    const handleSizeValues = ()=>{
-        const csLowerValue = document.querySelector('#cs-lower').value;
-        const csUpperValue = document.querySelector('#cs-upper').value;
-        const idLowerValue = document.querySelector('#id-lower').value;
-        const idUpperValue = document.querySelector('#id-upper').value;
-      
-        setcsLower(csLowerValue);
-        setcsUpper(csUpperValue);
-        setisLower(idLowerValue);
-        setidUpper(idUpperValue);
-      
-        console.log(csLowerValue, csUpperValue, idLowerValue, idUpperValue);
-      }
+  
+    const handleSizeValues = () => {
+      setcsLower(document.querySelector('#cs-lower').value);
+      setcsUpper(document.querySelector('#cs-upper').value);
+      setidLower(document.querySelector('#id-lower').value);
+      setidUpper(document.querySelector('#id-upper').value);
+    };
+    useEffect(() => {
+        console.log(csLower, csUpper, idLower, idUpper);
+      }, [csLower, csUpper, idLower, idUpper]);
       
 
   return (
     <div className="sidebar">
         <img src={product} alt="product" />
-        <Button variant="contained" type='submit' onClick={handleSizeValues} >Contained</Button>
+        <Button variant="contained" type="submit" onClick={handleSizeValues}>Contained</Button>
         <h2><strong>Switch</strong> between mm and in</h2>
         <div>
             <div>
