@@ -64,7 +64,7 @@ function DetailedDescription() {
             <a href="/"><Button variant="contained">See Data Sheet</Button></a>
           </div>
           <div className="image">
-            <img src={product} alt="image" />
+            <img src={product} alt="product" />
           </div>
         </div>
       </div>
