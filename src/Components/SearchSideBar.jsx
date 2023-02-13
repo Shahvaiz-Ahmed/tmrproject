@@ -9,15 +9,22 @@ function SearchSideBar() {
     const [csUpper, setcsUpper] = useState();
     const [idLower, setisLower] = useState();
     const [idUpper, setidUpper] = useState();
+    
 
     const handleSizeValues = ()=>{
-        setcsLower(document.querySelector('#cs-lower').value);
-        setcsUpper(document.querySelector('#cs-upper').value);
-        setisLower(document.querySelector('#id-lower').value);
-        setidUpper(document.querySelector('#id-upper').value);
-
-        console.log(csLower, csUpper, idLower, idUpper);
-    }
+        const csLowerValue = document.querySelector('#cs-lower').value;
+        const csUpperValue = document.querySelector('#cs-upper').value;
+        const idLowerValue = document.querySelector('#id-lower').value;
+        const idUpperValue = document.querySelector('#id-upper').value;
+      
+        setcsLower(csLowerValue);
+        setcsUpper(csUpperValue);
+        setisLower(idLowerValue);
+        setidUpper(idUpperValue);
+      
+        console.log(csLowerValue, csUpperValue, idLowerValue, idUpperValue);
+      }
+      
 
   return (
     <div className="sidebar">
