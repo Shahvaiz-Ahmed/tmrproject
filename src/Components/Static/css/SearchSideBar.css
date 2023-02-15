@@ -1,8 +1,40 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 0.5rem;
     margin-left: 2rem;
+    border: solid rgb(255, 249, 249)
+}
+.btn{
+    background-color:#008080;
+    color: white;
+    height: 4.9vh;
+    width: 23vw;
+    font-size: larger;
+}
+.btn:hover{
+    background-color:#015e5e;
+}
+.material-type{
+    display: grid;
+    align-self: center ;
+    height:4.7vh;
+    width:  15vw;
+    color:white;
+    background-color: rgb(20, 94, 204);
+    padding-left: 8vw;
+    padding-top: 2.3vh;
+    
+    background-color: #008080   ;
+}
+.mtchecck-box{
+    margin-left:2vw ;
+    font-size:xx-large;
+}
+.mtchecck-box label{
+    margin-left:2vw ;
+    font-size:large;
+    font-weight: 500;
 }
 
 .sidebar div{
@@ -10,9 +42,10 @@
     flex-direction: column;
 }
 
+
 .sidebar div *{
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-top: 1rem;
 }
