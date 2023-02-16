@@ -28,19 +28,17 @@ function SearchSideBar() {
             <h2><strong>Switch</strong> between mm and in</h2>
             <div>
                 <div>
-                    <p></p>
-                    <p>Lower</p>
-                    <p></p>
-                    <p>Upper</p>
+                    <h2 className="padding-1">Lower</h2>
+                    <h2 className="padding-2">Upper</h2>
                 </div>
                 <div>
-                    <p>CS(mm)</p>
+                    <h2>CS(mm)</h2>
                     <input type="search" id='cs-lower' />
                     <p>to</p>
                     <input type="search" id='cs-upper' />
                 </div>
                 <div>
-                    <p>ID(mm)</p>
+                    <h2>ID(mm)</h2>
                     <input type="search" id='id-lower' />
                     <p>to</p>
                     <input type="search" id='id-upper' />

@@ -5,10 +5,17 @@
     margin-left: 2rem;
     border: solid rgb(255, 249, 249)
 }
+.padding-2{
+margin-left: 10vw;
+}
+
+.padding-1{
+    margin-left: 5vw;
+}
 .btn{
     background-color:#008080;
     color: white;
-    height: 4.9vh;
+    height: 3.9vh;
     width: 23vw;
     font-size: larger;
 }
@@ -17,18 +24,18 @@
 }
 .material-type{
     display: grid;
-    align-self: center ;
+    /* align-self: center; */
     height:4.7vh;
-    width:  15vw;
+    width:  21vw;
     color:white;
-    background-color: rgb(20, 94, 204);
-    padding-left: 8vw;
-    padding-top: 2.3vh;
+    font-size: 2vh;
+    padding-left: 2vw;
+    padding-top: 1.2vh;
     
     background-color: #008080   ;
 }
 .mtchecck-box{
-    margin-left:2vw ;
+    margin-left:1.3vw ;
     font-size:xx-large;
 }
 .mtchecck-box label{
