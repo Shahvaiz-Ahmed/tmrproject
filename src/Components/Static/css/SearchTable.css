@@ -1,0 +1,14 @@
+.searchTable strong{
+    font-size: 2rem;
+    font-family: var(--heading);
+}
+
+.searchTable span{
+    font-size: 1.3rem;
+    font-family: var(--para);
+}
+
+.searchTable a{
+    text-decoration: none;
+    color: black;
+}

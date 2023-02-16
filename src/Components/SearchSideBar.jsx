@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import './Static/css/SearchSideBar.css';
 import product from './Static/images/product.png';
@@ -20,6 +21,25 @@ function SearchSideBar() {
     useEffect(() => {
         console.log(csLower, csUpper, idLower, idUpper);
     }, [csLower, csUpper, idLower, idUpper]);
+=======
+import React from 'react';
+import './Static/css/SearchSideBar.css';
+import product from './Static/images/product.png';
+import Button from '@mui/material/Button';
+import StandardSizeSearch from './StandardSizeSearch';
+
+
+function SearchSideBar() {
+    
+    const handleSizeValues = ()=>{
+        const cslowervalue = document.querySelector('#cs-lower').value;
+        const csuppervalue = document.querySelector('#cs-upper').value;
+        const idlowervalue = document.querySelector('#id-lower').value;
+        const iduppervalue = document.querySelector('#id-upper').value;
+        
+        console.log(cslowervalue, csuppervalue, idlowervalue, iduppervalue);
+    }
+>>>>>>> origin/shahvaiz
 
 
     return (
@@ -106,7 +126,13 @@ function SearchSideBar() {
             </div>
 
         </div>
+<<<<<<< HEAD
     )
+=======
+        <StandardSizeSearch/>
+    </div>
+  )
+>>>>>>> origin/shahvaiz
 }
 
 export default SearchSideBar

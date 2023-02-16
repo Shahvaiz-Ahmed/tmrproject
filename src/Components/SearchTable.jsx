@@ -22,7 +22,7 @@ function createData(partNumber, startingPrice, stock, material, hardness, type, 
 function SearchTable() {
   return (
     <div className='searchTable'>
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -48,19 +48,19 @@ function SearchTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.partNumber}
+                <span><a href="/">{row.partNumber}</a></span>
               </TableCell>
-              <TableCell align="right">{row.startingPrice}</TableCell>
-              <TableCell align="right">{row.stock}</TableCell>
-              <TableCell align="right">{row.material}</TableCell>
-              <TableCell align="right">{row.hardness}</TableCell>
-              <TableCell align="right">{row.type}</TableCell>
-              <TableCell align="right">{row.size}</TableCell>
-              <TableCell align="right">{row.cs}</TableCell>
-              <TableCell align="right">{row.id}</TableCell>
-              <TableCell align="right">{row.properties}</TableCell>
-              <TableCell align="right">{row.highTmp}</TableCell>
-              <TableCell align="right">{row.lowTmp}</TableCell>
+              <TableCell align="right"><span>{row.startingPrice}</span></TableCell>
+              <TableCell align="right"><span>{row.stock}</span></TableCell>
+              <TableCell align="right"><span>{row.material}</span></TableCell>
+              <TableCell align="right"><span>{row.hardness}</span></TableCell>
+              <TableCell align="right"><span>{row.type}</span></TableCell>
+              <TableCell align="right"><span>{row.size}</span></TableCell>
+              <TableCell align="right"><span>{row.cs}</span></TableCell>
+              <TableCell align="right"><span>{row.id}</span></TableCell>
+              <TableCell align="right"><span>{row.properties}</span></TableCell>
+              <TableCell align="right"><span>{row.highTmp}</span></TableCell>
+              <TableCell align="right"><span>{row.lowTmp}</span></TableCell>
             </TableRow>
           ))}
         </TableBody>
