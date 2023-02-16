@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import recomended from './Static/images/recomended.png';
+import './Static/css/RecomendedItemCard.css'
 
 function RecomendedItemCard() {
   return (
@@ -19,10 +20,10 @@ function RecomendedItemCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          CP80BK21-OR-204
+          <strong>CP80BK21-OR-204</strong>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto laudantium, soluta quisquam qui deleniti minima fugit numquam omnis impedit eos nisi eaque recusandae natus veritatis ad perferendis, harum et? In soluta sequi iusto perspiciatis sit?
+            <span style={ { color: '#f6f6f6', fontSize: '1.3rem' } }>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto laudantium, soluta quisquam qui deleniti minima fugit numquam omnis impedit eos nisi eaque recusandae natus veritatis ad perferendis, harum et? In soluta sequi iusto perspiciatis sit?</span>
           </Typography>
         </CardContent>
       </CardActionArea>

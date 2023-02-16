@@ -16,7 +16,8 @@
 }
 
 .classContainer h1{
-    background-color: blue;
+    background-color: var(--teal);
+    color: var(--white);
     width: 60vw;
     padding: 2rem;
 }

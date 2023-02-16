@@ -33,7 +33,7 @@ function ProductComponent() {
   return (
     <div className='container'>
         <div className="left">
-          <img src={product} alt="product" />
+          <img src={product} alt="product" className='pimg'/>
           <div className="sizes">
             <h3><span>CS</span>0.139 in (3.53 mm)</h3>
             <h3><span>ID</span>0.139 in (3.53 mm)</h3>
@@ -41,17 +41,17 @@ function ProductComponent() {
           </div>
           <div className="dataSheet">
             <img src={pdf} alt="pdf" />
-            <a href="/"><Button variant="contained">See Data Sheet</Button></a>
+            <a href="/"><Button variant="contained"><span>See Data Sheet</span></Button></a>
           </div>
           <div className="quantity">
-          <Button variant="contained">Quantity</Button>
+          <Button variant="contained"><span>Quantity</span></Button>
           </div>
         </div>
 
         <div className="right">
-          <h1>V1020-204</h1>
-          <h3>Color: Black<span></span></h3>
-          <h2>AS568-204 O-rings made from CP80BK21; a 80 Shore A durometer Canrez FKM GFLT. This material is Black, Clean Room Manufactured, USP VI, KTW, WRAS, Encapsulated, High Temp, and Silicone Lubricated.</h2>
+          <h1><strong>V1020-204</strong></h1>
+          <h3><strong>Color: Black</strong><span></span></h3>
+          <h2><span>AS568-204 O-rings made from CP80BK21; a 80 Shore A durometer Canrez FKM GFLT. This material is Black, Clean Room Manufactured, USP VI, KTW, WRAS, Encapsulated, High Temp, and Silicone Lubricated.</span></h2>
 
         <div className="table1">
         <TableContainer component={Paper}>
@@ -70,10 +70,10 @@ function ProductComponent() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row1.Quantity1} - {row1.Quantity2}
+                <span>{row1.Quantity1} - {row1.Quantity2}</span>
               </TableCell>
-              <TableCell align="right">${row1.Price}</TableCell>
-              <TableCell align="right">{row1.Discount}%</TableCell>
+              <TableCell align="right"><span>${row1.Price}</span></TableCell>
+              <TableCell align="right"><span>{row1.Discount}%</span></TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -98,9 +98,9 @@ function ProductComponent() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.AvailableQuantity}
+                <span>{row.AvailableQuantity}</span>
               </TableCell>
-              <TableCell align="right">{row.LeadTimetoShip}</TableCell>
+              <TableCell align="right"><span>{row.LeadTimetoShip}</span></TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -114,7 +114,7 @@ function ProductComponent() {
   }}
   variant="contained"
 >
-  Add to Cart
+  <span>Add to Cart</span>
 </Button>
         </div>
     </div>

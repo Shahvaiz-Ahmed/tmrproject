@@ -7,7 +7,8 @@
 
 .desccontainer h1{
     margin-bottom: 10rem;
-    background-color: blue;
+    background-color: var(--teal);
+    color: var(--white);
     position: relative;
     left: 5vw;
     margin-right: 22vw;
@@ -24,6 +25,8 @@
 .descleft h3{
     width: 35vw;
     margin-left: 8rem;
+    position: relative;
+    bottom: 4rem;
 }
 
 .detailTable{
@@ -44,10 +47,17 @@
     width: 10rem;
     margin-left: 35rem;
     margin-bottom: 4rem;
+    position: relative;
+    right: 30rem;
 }
 
 .descdataSheet img{
     height: 6rem;
     width: 6rem;
     padding: 1rem;
+}
+
+.desccontainer Button{
+    background-color: var(--teal);
+    color: var(--white);
 }

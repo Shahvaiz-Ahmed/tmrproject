@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Static/css/SearchSideBar.css';
 import product from './Static/images/product.png';
 import Button from '@mui/material/Button';
+import StandardSizeSearch from './StandardSizeSearch';
 
 
 function SearchSideBar() {
-    const [csLower, setcsLower] = useState();
-    const [csUpper, setcsUpper] = useState();
-    const [idLower, setisLower] = useState();
-    const [idUpper, setidUpper] = useState();
-
+    
     const handleSizeValues = ()=>{
-        setcsLower(document.querySelector('#cs-lower').value);
-        setcsUpper(document.querySelector('#cs-upper').value);
-        setisLower(document.querySelector('#id-lower').value);
-        setidUpper(document.querySelector('#id-upper').value);
-
-        console.log(csLower, csUpper, idLower, idUpper);
+        const cslowervalue = document.querySelector('#cs-lower').value;
+        const csuppervalue = document.querySelector('#cs-upper').value;
+        const idlowervalue = document.querySelector('#id-lower').value;
+        const iduppervalue = document.querySelector('#id-upper').value;
+        
+        console.log(cslowervalue, csuppervalue, idlowervalue, iduppervalue);
     }
 
   return (
@@ -44,7 +41,7 @@ function SearchSideBar() {
                 <input type="search" id='id-upper'/>
             </div>
         </div>
-
+        <StandardSizeSearch/>
     </div>
   )
 }
