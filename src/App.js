@@ -12,7 +12,6 @@ function App() {
       {/* <ProductComponent/>
       <RecomendedItems/>
       <DetailedDescription/> */}
-      {/* <SearchBar/> */}
         <Navbar />
       <div className='search-body'>
         <SearchSideBar/>
