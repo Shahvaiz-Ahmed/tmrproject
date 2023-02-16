@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-left: 2rem;
-<<<<<<< HEAD
     border: solid rgb(255, 249, 249)
 }
 .btn{
@@ -36,9 +35,6 @@
     margin-left:2vw ;
     font-size:large;
     font-weight: 500;
-=======
-    margin-bottom: 4rem;
->>>>>>> origin/shahvaiz
 }
 
 .sidebar div{
