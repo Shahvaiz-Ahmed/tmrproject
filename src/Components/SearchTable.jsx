@@ -6,8 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import './Static/css/SearchTable.css'
-// import { Link } from 'react-router-dom';
+import './Static/css/SearchTable.css';
+import {  Link } from 'react-router-dom';
 
 function createData(partNumber, startingPrice, stock, material, hardness, type, size, cs, id, properties, highTmp, lowTmp) {
     return { partNumber, startingPrice, stock, material, hardness, type, size, cs, id, properties, highTmp, lowTmp};
@@ -49,7 +49,7 @@ function SearchTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-               <span>{row.partNumber}</span>
+                <Link to="/product"><span>{row.partNumber}</span></Link>
               </TableCell>
               <TableCell align="right"><span>{row.startingPrice}</span></TableCell>
               <TableCell align="right"><span>{row.stock}</span></TableCell>
