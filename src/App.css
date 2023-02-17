@@ -24,12 +24,12 @@
 
 strong{
   font-family: var(--heading);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 span{
   font-family: var(--para);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 a{

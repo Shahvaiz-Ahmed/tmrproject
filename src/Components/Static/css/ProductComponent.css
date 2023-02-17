@@ -18,7 +18,7 @@
     height: 90vh;
     position: relative;
     bottom: 2rem;
-    left: 6rem;
+    left: 9rem;
     flex: 1;
     top: 1rem;
 }
@@ -90,6 +90,8 @@
 .right h3{
     font-weight: 1000;
     font-size: large;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .right h3 span{
@@ -113,7 +115,7 @@
 
 .table{
     width: 100vh;
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .cartBtn{
@@ -123,4 +125,8 @@
 .container Button{
     background-color: var(--teal);
     color: var(--white);
+}
+
+TableRow{
+    height: 0.5rem;
 }

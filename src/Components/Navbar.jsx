@@ -8,15 +8,23 @@ import Toggle from './Toggle.jsx';
 
 function Navbar(props) {
     const [dropdown, setdropdown] = useState(false);
-    // const [darkMode, setdarkMode] = useState(false);
+    const [darkMode, setdarkMode] = useState(false);
+    const [cssstyle, setcssstyle] = useState('imgOnLeft');
 
     const handleDropDown = ()=>{
         setdropdown(!dropdown);
     }
 
+    const handleDarkMode = ()=>{
+        setdarkMode(!darkMode);
+        setcssstyle('imgOnRight');
+    }
+
     const handleMenu = ()=>{
         props.setsideMenu(!props.sideMenu);
+
     }
+   
 
   return (
     <div className="navbar">
@@ -26,7 +34,7 @@ function Navbar(props) {
             <img src={search} alt="search" />
         </form>
         <img src={cart} alt="cart" />
-        <Toggle/>
+        <Toggle onClick={handleDarkMode} cssstyle={cssstyle} setcssstyle={setcssstyle} darkMode={darkMode} />
         <img src={account} alt="account" onClick={handleDropDown}/>
         {
             dropdown?<ul>
