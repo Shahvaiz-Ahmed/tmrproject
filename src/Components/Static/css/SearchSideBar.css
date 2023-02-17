@@ -13,10 +13,10 @@ margin-left: 10vw;
     margin-left: 5vw;
 }
 .btn{
-    background-color:#008080;
+    background-color:#015e5e;
     color: white;
     height: 3.9vh;
-    width: 23vw;
+    width: 22vw;
     font-size: larger;
 }
 .btn:hover{
@@ -26,7 +26,7 @@ margin-left: 10vw;
     display: grid;
     /* align-self: center; */
     height:4.7vh;
-    width:  21vw;
+    width: 22vw;
     color:white;
     font-size: 2vh;
     padding-left: 2vw;
