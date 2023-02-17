@@ -6,7 +6,7 @@ import cart from './Static/images/cart.png';
 import search from './Static/images/search.gif';
 import Toggle from './Toggle.jsx';
 
-function Navbar() {
+function Navbar(props) {
     const [dropdown, setdropdown] = useState(false);
     // const [darkMode, setdarkMode] = useState(false);
 
@@ -14,9 +14,13 @@ function Navbar() {
         setdropdown(!dropdown);
     }
 
+    const handleMenu = ()=>{
+        props.setsideMenu(!props.sideMenu);
+    }
+
   return (
     <div className="navbar">
-        <img src= {hamburger} alt="hamburger" />
+        <img src= {hamburger} alt="hamburger" onClick={handleMenu} />
         <form action="" method="get">
             <input type="search" name="search" id="search" />
             <img src={search} alt="search" />
