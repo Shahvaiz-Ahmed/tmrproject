@@ -15,12 +15,18 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Menu from './Components/Menu';
+import Navbar from './Components/Navbar';
 
 function Copyright() {
+
   return (
+    
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -56,9 +62,20 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+  const [sideMenu, setsideMenu] = useState(false);
 
+    useEffect(() => {  
+      return () => {
+        window.addEventListener('scroll', ()=>{ setsideMenu(false) });
+      }
+    }, [])
   return (
     <ThemeProvider theme={theme}>
+      <>
+    <div className="App">
+      {sideMenu ? <Menu sideMenu={sideMenu} setsideMenu={setsideMenu} /> : <></>}
+      <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} />
+    </div></>
       <CssBaseline />
       <AppBar
         position="absolute"

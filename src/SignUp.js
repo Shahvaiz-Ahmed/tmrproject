@@ -12,6 +12,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Menu from './Components/Menu';
+import Navbar from './Components/Navbar';
 
 function Copyright(props) {
   return (
@@ -37,9 +41,20 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
+  const [sideMenu, setsideMenu] = useState(false);
 
+    useEffect(() => {  
+      return () => {
+        window.addEventListener('scroll', ()=>{ setsideMenu(false) });
+      }
+    }, [])
   return (
+    
     <ThemeProvider theme={theme}>
+      <><div className="App">
+      {sideMenu ? <Menu sideMenu={sideMenu} setsideMenu={setsideMenu} /> : <></>}
+      <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} />
+    </div></>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
