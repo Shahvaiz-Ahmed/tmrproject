@@ -32,7 +32,7 @@ function Navbar(props) {
             <img src={account} alt="account" onClick={handleDropDown} />
             {
                 dropdown ? <ul>
-                    <li><Link to="">  <strong>Profile</strong></Link></li>
+                    <li><Link to="/Profile:id">  <strong>Profile</strong></Link></li>
                     <li><Link to="/Sign-in"><strong>Login</strong></Link></li>
                     <li> <Link to="/Sign-up"><strong>Register</strong> </Link>  </li>
                     <li><Link to=""><strong>Logout</strong></Link></li>
