@@ -8,6 +8,8 @@ import Menu from './Components/Menu';
 import Navbar from './Components/Navbar';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 function App() {
   const [sideMenu, setsideMenu] = useState(false);
 
@@ -26,6 +28,8 @@ function App() {
        <SearchSideBar/>   <SearchTable/>
        </div>
         </>}/>
+        <Route path="/Sign-up" element={<SignUp/>}/>
+        <Route path="/Sign-in" element={<SignIn/>}/>
       </Routes>
   );
 }
