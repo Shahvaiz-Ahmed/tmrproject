@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import Checkout from './Checkout';
 function App() {
   const [sideMenu, setsideMenu] = useState(false);
 
@@ -30,6 +31,7 @@ function App() {
         </>}/>
         <Route path="/Sign-up" element={<SignUp/>}/>
         <Route path="/Sign-in" element={<SignIn/>}/>
+        <Route path="/Check-out" element={<Checkout/>}/>
       </Routes>
   );
 }

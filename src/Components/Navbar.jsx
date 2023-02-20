@@ -26,7 +26,8 @@ function Navbar(props) {
                 <input type="search" name="search" id="search" />
                 <img src={search} alt="search" />
             </form>
-            <img src={cart} alt="cart" />
+
+            <Link to="/Check-out"> <img src={cart} alt="cart" /></Link>
             <Toggle />
             <img src={account} alt="account" onClick={handleDropDown} />
             {
