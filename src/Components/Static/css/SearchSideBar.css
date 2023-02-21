@@ -1,7 +1,7 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1vh;
     margin-left: 2rem;
     border: solid rgb(255, 249, 249)
 }
@@ -54,5 +54,5 @@ margin-left: 10vw;
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 1vh;
 }

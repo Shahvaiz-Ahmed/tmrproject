@@ -14,29 +14,21 @@ import Checkout from './Checkout';
 import Profile from './Components/Profile';
 function App() {
   const [sideMenu, setsideMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {  
     return () => {
       window.addEventListener('scroll', ()=>{ setsideMenu(false) });
     }
   }, []);
-  // const customer = {
-  //   custNo: '12345',
-  //   name: 'John Doe',
-  //   research: 'Research data',
-  //   phoneNo: '555-555-5555',
-  //   customerPostingGroup: 'Group 1',
-  //   genBusPostingGroup: 'Group 2',
-  //   vatBusPostingGroup: 'Group 3',
-  // };
   return (
     <Routes>
       <Route path="/Product" element={<AllComponents />}/>
       <Route path="/" element={<>
         {sideMenu ? <Menu sideMenu={sideMenu} setsideMenu={setsideMenu} /> : <></>}
-      <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} />
+      <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} setSearchTerm={setSearchTerm}/>
       <div className='search-body'>
-       <SearchSideBar/>   <SearchTable/>
+       <SearchSideBar />   <SearchTable searchTerm={searchTerm} />
        </div>
         </>}/>
         <Route path="/Sign-up" element={<SignUp/>}/>

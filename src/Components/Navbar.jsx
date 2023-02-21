@@ -8,25 +8,32 @@ import Toggle from './Toggle.jsx';
 import { Link } from 'react-router-dom';
 
 function Navbar(props) {
+    const [inputValue, setInputValue] = useState('');
     const [dropdown, setdropdown] = useState(false);
+    
     // const [darkMode, setdarkMode] = useState(false);
 
     const handleDropDown = () => {
         setdropdown(!dropdown);
     }
-
+    function handleInputChange(event) {
+        setInputValue(event.target.value);
+      }
+      function handleSubmit(event) {
+        event.preventDefault();
+        props.setSearchTerm(inputValue);
+      }
     const handleMenu = () => {
         props.setsideMenu(!props.sideMenu);
     }
-
     return (
         <div className="navbar">
             <img src={hamburger} alt="hamburger" onClick={handleMenu} />
-            <form action="" method="get">
-                <input type="search" name="search" id="search" />
-                <img src={search} alt="search" />
-            </form>
-
+             <form onSubmit={handleSubmit}  method="get">
+                <input type="search" name="search" id="search" value={inputValue}
+                    onChange={handleInputChange}/>
+                  <button type="submit">    <img src={search} alt="search" /></button>
+                </form>
             <Link to="/Check-out"> <img src={cart} alt="cart" /></Link>
             <Toggle />
             <img src={account} alt="account" onClick={handleDropDown} />

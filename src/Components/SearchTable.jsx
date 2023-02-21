@@ -8,19 +8,30 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import './Static/css/SearchTable.css';
 import {  Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
-function createData(partNumber, startingPrice, stock, material, hardness, type, size, cs, id, properties, highTmp, lowTmp) {
-    return { partNumber, startingPrice, stock, material, hardness, type, size, cs, id, properties, highTmp, lowTmp};
-  }
-  
-  const rows = [
-      createData('CP80BK21-OR-204', 10.00, 'IN STOCK', 'FKM', 'Black', 80, 'O-Ring', 'AS568-204', 3.53, 9.12, 'GFLT, Clean Room Mfg, USP VI, KTW, WRAS, Encap, HT, Silicone Lubricated', 200, 10),
-      createData('CP80BK21-OR-204', 10.00, 'IN STOCK', 'FKM', 'Black', 80, 'O-Ring', 'AS568-204', 3.53, 9.12, 'GFLT, Clean Room Mfg, USP VI, KTW, WRAS, Encap, HT, Silicone Lubricated', 200, 10),
-      createData('CP80BK21-OR-204', 10.00, 'IN STOCK', 'FKM', 'Black', 80, 'O-Ring', 'AS568-204', 3.53, 9.12, 'GFLT, Clean Room Mfg, USP VI, KTW, WRAS, Encap, HT, Silicone Lubricated', 200, 10),
-      createData('CP80BK21-OR-204', 10.00, 'IN STOCK', 'FKM', 'Black', 80, 'O-Ring', 'AS568-204', 3.53, 9.12, 'GFLT, Clean Room Mfg, USP VI, KTW, WRAS, Encap, HT, Silicone Lubricated', 200, 10),
-  ];
 
-function SearchTable() {
+function SearchTable({  searchTerm }) {
+  console.log(searchTerm);
+  const [arr, setarr] = useState([]);
+    const username = 'MUHAMMAD ALI';
+    const password = 'ZjpHC2TE16qjPqo6iUraaJrIg2gps4xHSdTmA9FVNd8=';
+    useEffect(() => {
+    
+      return () => {
+        axios.get('https://api.businesscentral.dynamics.com/v2.0/0cd74c11-7d97-4748-a720-ebbd5100b4e9/Sandbox1/api/TMRC/TMRC_Group/v2.0/companies(b290c1c3-11ab-ec11-bb8f-000d3a398a56)/ItemRelative', {
+        auth:{
+          username,
+          password
+        }
+      }).then(res=> setarr(res.data.value) )
+    
+      }
+    }, [])
+    const filteredData = arr.filter(arr =>
+      arr.Category.toLowerCase().includes(searchTerm.toLowerCase()));
   return (
     <div className='searchTable'>
         <TableContainer component={Paper} >
@@ -28,40 +39,34 @@ function SearchTable() {
         <TableHead>
           <TableRow>
             <TableCell><strong>Part Number</strong></TableCell>
-            <TableCell align="right"><strong>Starting Price</strong></TableCell>
-            <TableCell align="right"><strong>Stock</strong></TableCell>
-            <TableCell align="right"><strong>Material</strong></TableCell>
-            <TableCell align="right"><strong>Color</strong></TableCell>
-            <TableCell align="right"><strong>Hardness (Shore) </strong></TableCell>
-            <TableCell align="right"><strong>Type</strong></TableCell>
-            <TableCell align="right"><strong>Size</strong></TableCell>
-            <TableCell align="right"><strong>CS (mm)</strong></TableCell>
-            <TableCell align="right"><strong>ID (mm)</strong></TableCell>
-            <TableCell align="right"><strong>Properties</strong></TableCell>
-            <TableCell align="right"><strong>High Temprature (&#8451;)</strong></TableCell>
-            <TableCell align="right"><strong>Low Temprature (&#8451;)</strong></TableCell>
+            <TableCell align="right"><strong>Description</strong></TableCell>
+            <TableCell align="right"><strong>Category</strong></TableCell>
+            <TableCell align="right"><strong>UOFM</strong></TableCell>
+            <TableCell align="right"><strong>Price</strong></TableCell>
+            <TableCell align="right"><strong>Inventory</strong></TableCell>
+            <TableCell align="right"><strong>QtyPurchOrder</strong></TableCell>
+            <TableCell align="right"><strong>Variant</strong></TableCell>
+            <TableCell align="right"><strong>Picture</strong></TableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {filteredData.map((filteredData) => (
             <TableRow
-              key={row.partNumber}
+              key={arr.partNumber}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                <Link to="/product"><span>{row.partNumber}</span></Link>
+              <TableCell component="th" scope="arr">
+                <Link to="/product"><span>{filteredData.ItemNo}</span></Link>
               </TableCell>
-              <TableCell align="right"><span>{row.startingPrice}</span></TableCell>
-              <TableCell align="right"><span>{row.stock}</span></TableCell>
-              <TableCell align="right"><span>{row.material}</span></TableCell>
-              <TableCell align="right"><span>{row.hardness}</span></TableCell>
-              <TableCell align="right"><span>{row.type}</span></TableCell>
-              <TableCell align="right"><span>{row.size}</span></TableCell>
-              <TableCell align="right"><span>{row.cs}</span></TableCell>
-              <TableCell align="right"><span>{row.id}</span></TableCell>
-              <TableCell align="right"><span>{row.properties}</span></TableCell>
-              <TableCell align="right"><span>{row.highTmp}</span></TableCell>
-              <TableCell align="right"><span>{row.lowTmp}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.Description}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.Category}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.UOFM}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.UnitPrice}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.Inventory}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.QtyPurchOrder}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.Variant}</span></TableCell>
+              <TableCell align="right"><span>{filteredData.Picture}</span></TableCell>
             </TableRow>
           ))}
         </TableBody>
