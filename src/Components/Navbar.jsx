@@ -20,7 +20,6 @@ function Navbar(props) {
         setInputValue(event.target.value);
       }
       function handleSubmit(event) {
-        event.preventDefault();
         props.setSearchTerm(inputValue);
       }
     const handleMenu = () => {
@@ -29,10 +28,10 @@ function Navbar(props) {
     return (
         <div className="navbar">
             <img src={hamburger} alt="hamburger" onClick={handleMenu} />
-             <form onSubmit={handleSubmit}  method="get">
+             <form   method="get">
                 <input type="search" name="search" id="search" value={inputValue}
                     onChange={handleInputChange}/>
-                  <button type="submit">    <img src={search} alt="search" /></button>
+                <Link  onClick={handleSubmit} to="/"><img src={search} alt="search" /></Link>
                 </form>
             <Link to="/Check-out"> <img src={cart} alt="cart" /></Link>
             <Toggle />

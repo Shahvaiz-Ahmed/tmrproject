@@ -20,10 +20,6 @@ const rows = [
   createData(31024, '1-2 Weeks', 1000, 9909, 10),
 ];
 
-function createDataTable1(Quantity1, Quantity2, Price, Discount) {
-  return { Quantity1, Quantity2, Price, Discount};
-}
-
 function ProductComponent({itemdata}) {
   return (
     <div className='container'>
@@ -44,7 +40,7 @@ function ProductComponent({itemdata}) {
         </div>
 
         <div className="right">
-          <h1><strong>V1020-204</strong></h1>
+          <h1><strong>{itemdata.map((itemdata)=>(itemdata.ItemNo))}</strong></h1>
           <h3><strong>Color: Black</strong><span></span></h3>
           <h2><span>{itemdata.map((itemdata)=>(itemdata.Description))}</span></h2>
 
