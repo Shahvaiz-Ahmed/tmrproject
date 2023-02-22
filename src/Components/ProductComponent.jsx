@@ -24,12 +24,7 @@ function createDataTable1(Quantity1, Quantity2, Price, Discount) {
   return { Quantity1, Quantity2, Price, Discount};
 }
 
-const rowsTable1 = [
-  createDataTable1(0, 99, 1000, 8),
-  createDataTable1(100, 1000, 9909, 10),
-];
-
-function ProductComponent() {
+function ProductComponent({itemdata}) {
   return (
     <div className='container'>
         <div className="left">
@@ -51,7 +46,7 @@ function ProductComponent() {
         <div className="right">
           <h1><strong>V1020-204</strong></h1>
           <h3><strong>Color: Black</strong><span></span></h3>
-          <h2><span>AS568-204 O-rings made from CP80BK21; a 80 Shore A durometer Canrez FKM GFLT. This material is Black, Clean Room Manufactured, USP VI, KTW, WRAS, Encapsulated, High Temp, and Silicone Lubricated.</span></h2>
+          <h2><span>{itemdata.map((itemdata)=>(itemdata.Description))}</span></h2>
 
         <div className="table1">
         <TableContainer component={Paper}>
@@ -60,20 +55,20 @@ function ProductComponent() {
           <TableRow>
             <TableCell><strong>Qty</strong></TableCell>
             <TableCell align="right"><strong>Price</strong></TableCell>
-            <TableCell align="right"><strong>Discount</strong></TableCell>
+            <TableCell align="right"><strong>Category</strong></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rowsTable1.map((row1) => (
+          {itemdata.map((itemdata) => (
             <TableRow
-              key={row1.Quantity1}
+              key={itemdata.ItemNo}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <span>{row1.Quantity1} - {row1.Quantity2}</span>
+                <span>{itemdata.Inventory} - {itemdata.QtyPurchOrder}</span>
               </TableCell>
-              <TableCell align="right"><span>${row1.Price}</span></TableCell>
-              <TableCell align="right"><span>{row1.Discount}%</span></TableCell>
+              <TableCell align="right"><span>{itemdata.UnitPrice}</span></TableCell>
+              <TableCell align="right"><span>{itemdata.Category}</span></TableCell>
             </TableRow>
           ))}
         </TableBody>

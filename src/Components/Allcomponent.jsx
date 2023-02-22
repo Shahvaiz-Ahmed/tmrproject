@@ -5,10 +5,18 @@ import Navbar from './Navbar';
 import ProductComponent from './ProductComponent';
 import RecomendedItems from './RecomendedItems';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-function AllComponents() {
+function AllComponents(props) {
     const [sideMenu, setsideMenu] = useState(false);
-
+    const { ItemNo } = useParams();
+    console.log(ItemNo)
+    function findItemData(arr, ItemNo) {
+      const filteredArr = arr.filter(item => item.ItemNo === ItemNo);
+      return filteredArr;
+    }
+    const array=findItemData(props.arr, ItemNo);
+    console.log(array)
     useEffect(() => {  
       return () => {
         window.addEventListener('scroll', ()=>{ setsideMenu(false) });
@@ -19,9 +27,9 @@ function AllComponents() {
     <div className="App">
       {sideMenu ? <Menu sideMenu={sideMenu} setsideMenu={setsideMenu} /> : <></>}
       <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} />
-      <ProductComponent />
-      <RecomendedItems />
-      <DetailedDescription />
+      <ProductComponent itemdata={array} ite/>
+      <RecomendedItems itemdata={array}/>
+      <DetailedDescription itemdata={array}/>
     </div>
   );
 }

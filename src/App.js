@@ -15,6 +15,8 @@ import Profile from './Components/Profile';
 function App() {
   const [sideMenu, setsideMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [array, setarray] = useState('');
+  const [itemno, setitemno] = useState('');
 
   useEffect(() => {  
     return () => {
@@ -23,18 +25,18 @@ function App() {
   }, []);
   return (
     <Routes>
-      <Route path="/Product" element={<AllComponents />}/>
+      <Route path="/Product/:ItemNo" element={<AllComponents ItemNo={itemno} arr={array}/>}/>
       <Route path="/" element={<>
         {sideMenu ? <Menu sideMenu={sideMenu} setsideMenu={setsideMenu} /> : <></>}
       <Navbar sideMenu={sideMenu} setsideMenu={setsideMenu} setSearchTerm={setSearchTerm}/>
       <div className='search-body'>
-       <SearchSideBar />   <SearchTable searchTerm={searchTerm} />
+       <SearchSideBar />   <SearchTable searchTerm={searchTerm} setitemno={setitemno} setarray={setarray}/>
        </div>
         </>}/>
         <Route path="/Sign-up" element={<SignUp/>}/>
         <Route path="/Sign-in" element={<SignIn/>}/>
         <Route path="/Check-out" element={<Checkout/>}/>
-        <Route path="/Profile:id" element={<Profile />}/>
+        <Route path="/Profile" element={<Profile />}/>
       </Routes>
   );
 }
