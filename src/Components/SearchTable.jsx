@@ -34,7 +34,7 @@ function SearchTable({ searchTerm, setitemno, setarray }) {
     arr.Category.toLowerCase().includes(searchTerm.toLowerCase()));
   return (
     <div className='searchTable'>
-
+     
       <TableContainer component={Paper} >
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
