@@ -51,6 +51,7 @@ function SearchTable({ searchTerm, setitemno, setarray }) {
 
             </TableRow>
           </TableHead>
+          {searchTerm===""?<></>:
           <TableBody>
             {filteredData.map((filteredData) => (
               <TableRow
@@ -72,6 +73,7 @@ function SearchTable({ searchTerm, setitemno, setarray }) {
               </TableRow>
             ))}
           </TableBody>
+          }
         </Table>
       </TableContainer>
     </div>
