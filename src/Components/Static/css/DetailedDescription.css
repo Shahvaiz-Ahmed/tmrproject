@@ -61,3 +61,25 @@
     background-color: var(--teal);
     color: var(--white);
 }
+
+@media (max-width: 635px) {
+    .desccontainer{
+        position: relative;
+        top: 5rem;
+        left: 6rem;
+    }
+    .desccontainer h1{
+        position: relative;
+        left: 4rem;
+    }
+  }
+@media (max-width: 335px) {
+    .desccontainer{
+        position: relative;
+        top: 7rem;
+        left: 6rem;
+    }
+
+   
+  }
+

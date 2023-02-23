@@ -21,6 +21,7 @@
     left: 9rem;
     flex: 1;
     top: 1rem;
+    z-index: -1;
 }
 
 .pimg{
@@ -107,6 +108,7 @@
 
 .right h2{
     width: 100vh;
+    margin-bottom: 1rem;
 }
 
 .table1{
@@ -130,3 +132,39 @@
 TableRow{
     height: 0.5rem;
 }
+
+@media (max-width: 1650px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left{
+        margin-bottom: 2rem;
+    }
+
+    .right{
+        margin-left: 13rem;
+        margin-bottom: 2rem;
+    }
+  }
+
+@media (max-width: 752px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left{
+        margin-bottom: 2rem;
+    }
+
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 26rem;
+        margin-bottom: 2rem;
+        width: 20vw;
+    }
+  }

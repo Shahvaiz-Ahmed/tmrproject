@@ -21,3 +21,11 @@
     width: 60vw;
     padding: 2rem;
 }
+
+@media (max-width: 635px) {
+    .classContainer{
+        position: relative;
+        bottom: 5rem;
+        left: 6rem;
+    }
+  }

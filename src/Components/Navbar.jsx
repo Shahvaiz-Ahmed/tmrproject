@@ -29,8 +29,11 @@ function Navbar(props) {
   return (
     <div className="navbar">
         <img src= {hamburger} alt="hamburger" onClick={handleMenu} />
-        <form action="" method="get">
-            <input type="search" name="search" id="search" />
+        <form onChange={(e)=>{
+            e.preventDefault();
+            props.setsearchValue(e.target.value);
+        }}>
+            <input type="search" name="search" id="search"/>
             <img src={search} alt="search" />
         </form>
         <img src={cart} alt="cart" />

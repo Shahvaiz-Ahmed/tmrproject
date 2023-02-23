@@ -1,9 +1,9 @@
 .menu{
     position: absolute;
-    height: 100vh;
+    height: 100%;
     background-color: var(--teal);
     z-index: 1;
-    width: 20vw;
+    width: 20%;
 }
 
 .menu img{
@@ -28,3 +28,13 @@ ul li a{
     text-decoration: none;
     color: var(--white);
 }
+
+@media (max-width: 570px) {
+    .menu{
+        position: absolute;
+        height: 100%;
+        background-color: var(--teal);
+        z-index: 1;
+        width: 50%;
+    }
+  }

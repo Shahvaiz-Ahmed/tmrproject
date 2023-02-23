@@ -23,7 +23,7 @@ function RecomendedItemCard() {
           <strong>CP80BK21-OR-204</strong>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <span style={ { color: '#f6f6f6', fontSize: '1.3rem' } }>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto laudantium, soluta quisquam qui deleniti minima fugit numquam omnis impedit eos nisi eaque recusandae natus veritatis ad perferendis, harum et? In soluta sequi iusto perspiciatis sit?</span>
+            <span style={ { color: '#f6f6f6', fontSize: '1.3rem' } }>Lorem ipsum dolor sit a...</span>
           </Typography>
         </CardContent>
       </CardActionArea>

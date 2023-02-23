@@ -52,5 +52,17 @@
     top: 3.9rem;
     background-color: var(--teal);
     border-radius: 2rem;
+    z-index: 1;
 }
 
+@media (max-width: 540px) {
+    .form{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    }
+    .navbar form img{
+        display: none;
+    }
+  }

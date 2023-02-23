@@ -7,13 +7,11 @@ function RecomendedItems() {
   const [items, setItems] = useState(3);
 
   useEffect(() => {
-    if (window.innerWidth > 1452 || window.screen.width > 1452) setItems(3);
-    else if ((window.innerWidth < 1452 && window.innerWidth > 900) || (window.screen.width < 1452 && window.screen.width > 900)) setItems(2);
-    else if (window.innerWidth < 900 || window.screen.width < 900) setItems(1);
+    if (window.innerWidth < 576 || window.screen.width <576) setItems(1);
+    else setItems(3);
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 1452 || window.screen.width > 1452) setItems(3);
-      else if ((window.innerWidth < 1452 && window.innerWidth > 900) || (window.screen.width < 1452 && window.screen.width > 900)) setItems(2);
-      else if (window.innerWidth < 900 || window.screen.width < 900) setItems(1);
+      if (window.innerWidth < 576 || window.screen.width <576) setItems(1);
+      else setItems(3);
     });
   }, []);
   return (

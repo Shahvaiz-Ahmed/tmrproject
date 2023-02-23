@@ -9,7 +9,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import product from './Static/images/product.png';
 import pdf from './Static/images/pdf.png';
-import './Static/css/ProductComponent.css'
+import './Static/css/ProductComponent.css';
+// import {withRouter} from 'react-router-dom';
 
 function createData(AvailableQuantity, LeadTimetoShip, Quantity, Price, Discount) {
   return { AvailableQuantity, LeadTimetoShip, Quantity, Price, Discount};
@@ -29,7 +30,8 @@ const rowsTable1 = [
   createDataTable1(100, 1000, 9909, 10),
 ];
 
-function ProductComponent() {
+function ProductComponent(props) {
+
   return (
     <div className='container'>
         <div className="left">
@@ -66,8 +68,8 @@ function ProductComponent() {
         <TableBody>
           {rowsTable1.map((row1) => (
             <TableRow
-              key={row1.Quantity1}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            key={row1.Quantity1}
+            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 <span>{row1.Quantity1} - {row1.Quantity2}</span>
@@ -96,7 +98,7 @@ function ProductComponent() {
             <TableRow
               key={row.AvailableQuantity}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
+              >
               <TableCell component="th" scope="row">
                 <span>{row.AvailableQuantity}</span>
               </TableCell>
@@ -121,4 +123,4 @@ function ProductComponent() {
   )
 }
 
-export default ProductComponent
+export default ProductComponent;
